@@ -61,14 +61,11 @@ namespace GestiCoop.UI.ViewModels
         {
             var fenetre = new GestiCoop.UI.Views.AjouterEtudiantWindow();
 
-            // Si l'utilisateur clique sur Enregistrer (DialogResult == true)
             if (fenetre.ShowDialog() == true)
             {
-                // On ajoute le nouvel étudiant à notre liste complète
-                _tousLesEtudiants.Add(fenetre.ResultatEtudiant);
-
-                // On met à jour l'affichage dans le tableau
-                AppliquerFiltre();
+                var vmAjout = (AjouterEtudiantVM)fenetre.DataContext;
+                _tousLesEtudiants.Add(vmAjout.NouvelEtudiant);
+                AppliquerFiltre(); // ou le nom de ta méthode pour rafraîchir la liste
             }
         }
     }

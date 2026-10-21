@@ -70,12 +70,27 @@
                     </ComboBox>
                 </StackPanel>
 
-                <!-- Barre de recherche -->
+                <!-- Barre de recherche avec loupe -->
                 <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="3" Padding="5" Margin="0,0,20,0">
                     <Grid>
-                       
-                        <TextBlock Text="Rechercher un étudiant..." Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" Visibility="Collapsed"/>
-                        <TextBox Text="{Binding TexteRecherche, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center" Padding="2"/>
+                        <!-- Le TextBox principal avec un espace à gauche (Padding 25) pour ne pas écrire sur la loupe -->
+                        <TextBox x:Name="txtRecherche" Text="{Binding TexteRecherche, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center" Padding="25,2,2,2"/>
+
+                        <!-- Le texte fantôme et la loupe qui disparaissent -->
+                        <TextBlock Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False">
+                            <Run Text="🔍" FontFamily="Segoe UI Emoji"/>
+                            <Run Text=" Rechercher un étudiant..." />
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtRecherche}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
                     </Grid>
                 </Border>
             </DockPanel>

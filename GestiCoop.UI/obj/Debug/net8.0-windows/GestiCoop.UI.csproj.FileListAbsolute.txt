@@ -21,3 +21,4 @@ C:\Users\MCS\GestiCoop\GestiCoop.UI\obj\Debug\net8.0-windows\ref\GestiCoop.UI.dl
 C:\Users\MCS\GestiCoop\GestiCoop.UI\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\MCS\GestiCoop\GestiCoop.UI\obj\Debug\net8.0-windows\Views\AjouterEtudiantWindow.baml
 C:\Users\MCS\GestiCoop\GestiCoop.UI\obj\Debug\net8.0-windows\Views\AjouterEtudiantWindow.g.cs
+C:\Users\MCS\GestiCoop\GestiCoop.UI\obj\Debug\net8.0-windows\GestiCoop.UI.sourcelink.json

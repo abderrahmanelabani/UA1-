@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace GestiCoop.UI.ViewModels
 {
-    public class RelayCommand : ICommand
+    public partial class RelayCommand : ICommand
     {
         readonly Action<object> _exec;
         readonly Func<object, bool> _can;
